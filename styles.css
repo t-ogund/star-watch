@@ -1,0 +1,52 @@
+.project-background {
+    background-image: url("img/star-gaze.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    height: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card-row {
+    padding-left: 0;
+}
+
+.card-col {
+    padding: 0;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.nasa-img {
+
+}
+
+.card-body {
+
+}
+
+.card-body-styles {
+    /* color: white; */
+    text-align: center;
+}
+
+.layer {
+    
+}
+
+/* .top-section {
+    height: 100vh;
+} */

@@ -1,0 +1,20 @@
+{
+  "name": "starwatch",
+  "version": "1.0.0",
+  "description": "star gallery app",
+  "main": "script.js",
+  "scripts": {
+    "lite": "lite-server",
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Toye Ogundepo",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "moment": "^2.27.0"
+  }
+}
