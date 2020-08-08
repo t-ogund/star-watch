@@ -8,6 +8,8 @@ let end_date = moment().subtract(5, "days").format("YYYY-MM-DD");
 const nasaImg = Array.from(document.getElementsByClassName("nasa-img"));
 const cardTitle = document.querySelectorAll(".card-title");
 const cardText = document.querySelectorAll(".card-text");
+const learnMoreBtn = document.querySelectorAll(".learn-more-btn");
+const overlay = document.querySelector(".overlay")
 
 
 // console.log(nasaImg);
@@ -43,6 +45,7 @@ function fetchImages() {
     }
 
     console.log(res)
+    console.log("hi");
 
 
   });

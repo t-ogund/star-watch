@@ -43,8 +43,14 @@ h1 {
     text-align: center;
 }
 
-.layer {
+.overlay {
+   
     
+}
+
+.top-section {
+    /* background-color: black; */
+
 }
 
 /* .top-section {
