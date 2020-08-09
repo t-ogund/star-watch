@@ -16,6 +16,9 @@ const learnMoreBtn = document.querySelectorAll(".learn-more-btn");
 const overlay = document.querySelector(".overlay");
 const moreInfoText = document.querySelector("#more-info-text");
 const modalTitleText = document.querySelector("#modal-title-text");
+const cardMediaSection = document.querySelectorAll(".card-media-section")
+
+// console.log(cardMediaSection)
 
 
 
@@ -34,13 +37,22 @@ function fetchImages() {
         // console.log(nasaImg[j].src)
 
         if (nasaImg[j].src.includes("undefined") === true) {
-          // console.log("hi");
-          const iframe = document.createElement("iframe");
+          console.log("this is an iframe");
+
+          for (let z = 0; z < cardMediaSection.length; z++) {
+            const iframe = document.createElement("iframe");
+          console.log(iframe)
           iframe.src = res[j].url;
+          cardMediaSection[j].appendChild(iframe)
+          }
+
+          
           // console.log(iframe)
           // console.log(res[j].url)
         }
     }
+
+    
 
     for (let k = 0; k < cardTitle.length; k++) {
       // console.log(cardTitle[k]);
@@ -63,14 +75,34 @@ function fetchImages() {
       learnMoreBtn[n].innerHTML = "Learn more";
     }
 
+    // for (let q = 0; q < cardMediaSection.length; q++) {
+    //   // if (cardMediaSection[q].)
+    //   console.log(cardMediaSection[q].children)
+    // }
+
     // console.log(res)
+
+    // for (let x = 0; x < cardMediaSection.length; x++) {
+    //   const children = cardMediaSection[x].children
+    //   console.log(children)
+    //   for (let y = 0; y < children.length; y++) {
+    //     console.log(children[y].outerHTML)
+    //     if (children[y].outerHTML.includes("undefined") === true) {
+    //       console.log(y, "is undefined")
+    //       const iframe = document.createElement("iframe");
+    //       iframe.src = res[y].url
+    //       children[y].appendChild(iframe);
+    //       console.log(res[y].url)
+    //     }
+    //   }
+    // }
+    
   });
-
-  
-
 }
 
 fetchImages();
+
+
 
 // nasaImg.forEach(item => item.src = `${res[i].hdurl}`)
 
