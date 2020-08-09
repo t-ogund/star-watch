@@ -1,3 +1,5 @@
+//Dates Section
+
 let start_date = moment().format("YYYY-MM-DD");
 // console.log(start_date)
 
@@ -5,11 +7,17 @@ let end_date = moment().subtract(5, "days").format("YYYY-MM-DD");
 
 // console.log(end_date);
 
+
+
 const nasaImg = Array.from(document.getElementsByClassName("nasa-img"));
 const cardTitle = document.querySelectorAll(".card-title");
 const cardText = document.querySelectorAll(".card-text");
 const learnMoreBtn = document.querySelectorAll(".learn-more-btn");
-const overlay = document.querySelector(".overlay")
+const overlay = document.querySelector(".overlay");
+const moreInfoText = document.querySelector("#more-info-text");
+const modalTitleText = document.querySelector("#modal-title-text");
+
+
 
 
 // console.log(nasaImg);
@@ -23,14 +31,14 @@ function fetchImages() {
     }
     for (let j = 0; j < nasaImg.length; j++) {
         nasaImg[j].src = res[j].hdurl;
-        console.log(nasaImg[j].src)
+        // console.log(nasaImg[j].src)
 
         if (nasaImg[j].src.includes("undefined") === true) {
-          console.log("hi");
+          // console.log("hi");
           const iframe = document.createElement("iframe");
           iframe.src = res[j].url;
-          console.log(iframe)
-          console.log(res[j].url)
+          // console.log(iframe)
+          // console.log(res[j].url)
         }
     }
 
@@ -40,19 +48,23 @@ function fetchImages() {
     }
 
     for (let l = 0; l < cardText.length; l++) {
-      console.log(cardText[l]);
+      // console.log(cardText[l]);
       cardText[l].textContent = `${res[l].explanation}`.substring(0, 75) + "...";
     }
 
-    console.log(res)
-    console.log("hi");
+    for (let m = 0; m < learnMoreBtn.length; m++) {
+      learnMoreBtn[m].addEventListener("click", function() {
+        moreInfoText.textContent = `${res[m].explanation}`
+        modalTitleText.textContent = `${res[m].title}`;
+      })   
+    }
 
+    for (let n = 0; n < learnMoreBtn.length; n++) {
+      learnMoreBtn[n].innerHTML = "Learn more";
+    }
 
+    // console.log(res)
   });
-
-  
-
-  
 
   
 
@@ -61,4 +73,6 @@ function fetchImages() {
 fetchImages();
 
 // nasaImg.forEach(item => item.src = `${res[i].hdurl}`)
+
+
 
