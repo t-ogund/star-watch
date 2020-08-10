@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600;800&display=swap');
+
 .project-background {
     background-image: url("img/star-gaze.jpg");
     background-size: cover;
@@ -57,13 +59,7 @@ h1 {
 }
 
 .learn-more-btn:focus {
-    /* background-color: rgb(70, 12, 70);
-    border: none;
-    padding: 10px;
-    height: 50px;
-    border-radius: 3px; */
     outline: none;
-    /* color: rgb(238, 218, 255); */
 }
 
 .card-body {
@@ -73,20 +69,61 @@ h1 {
 }
 
 .card-body-styles {
-    /* color: white; */
     text-align: center;
 }
 
-.overlay {
-   
-    
+.modal-body {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 1.2rem;
+    background-color: rgb(46, 0, 46);
+    color: rgb(255, 255, 255);
 }
 
-.top-section {
-    /* background-color: black; */
-
+p, button {
+    font-family: 'Baloo Chettan 2', cursive;
 }
 
-/* .top-section {
-    height: 100vh;
-} */
+h1 {
+    font-family: 'Baloo Chettan 2', cursive;  
+    font-weight: bold;
+}
+
+.heading {
+    position: relative;
+    animation: heading;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    padding-top: 25px;
+    font-size: 4rem;
+}
+
+@keyframes heading {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.row-one {
+    position: relative;
+    animation: top-row;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes top-row {
+    0% {top: -100px}
+    100% {top: 0px}
+}
+
+.row-two {
+    position: relative;
+    animation: bottom-row;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bottom-row {
+    0% {bottom: -100px}
+    100% {bottom: 0px}
+}
