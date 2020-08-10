@@ -38,13 +38,15 @@ function fetchImages() {
 
         if (nasaImg[j].src.includes("undefined") === true) {
           console.log("this is an iframe");
-
-          for (let z = 0; z < cardMediaSection.length; z++) {
-            const iframe = document.createElement("iframe");
-          console.log(iframe)
+          const iframe = document.createElement("iframe");
           iframe.src = res[j].url;
-          cardMediaSection[j].appendChild(iframe)
-          }
+          cardMediaSection[j].prepend(iframe)
+          cardMediaSection[j].children[1].style.display = "none";
+          // for (let z = 0; z < cardMediaSection.length; z++) {
+            
+          // console.log(iframe)
+         
+          // }
 
           
           // console.log(iframe)
