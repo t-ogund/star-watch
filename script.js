@@ -73,9 +73,11 @@ function fetchImages() {
       })   
     }
 
-    for (let n = 0; n < learnMoreBtn.length; n++) {
-      learnMoreBtn[n].innerHTML = "Learn more";
-    }
+
+    //Button Text
+    // for (let n = 0; n < learnMoreBtn.length; n++) {
+    //   learnMoreBtn[n].innerHTML = "Learn more";
+    // }
 
     // for (let q = 0; q < cardMediaSection.length; q++) {
     //   // if (cardMediaSection[q].)
