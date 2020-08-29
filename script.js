@@ -30,18 +30,27 @@ const reversedCardTitle = cardTitleToArray.reverse();
 
 const dateToArray = Array.from(date);
 const reversedDate = dateToArray.reverse();
+
+const reversedNasaImg = nasaImg.reverse();
+console.log(reversedNasaImg);
+
+const cardMediaSectionToArray = Array.from(cardMediaSection);
+const reversedCardMediaSection = cardMediaSectionToArray.reverse();
+
 function formattedDate(dateToFormat) {
   const months = ["January", "February", "March", "April", "May", "June",
    "July", "August", "September", "October", "November", "December"];
 
     for (let i = 0; i < dateToFormat.length; i++) {
-
       const monthNumber = dateToFormat[i].slice(5, 7);
       const monthDay = dateToFormat[i].slice(8, 10);
       const year = dateToFormat[i].slice(0, 4);
-      console.log(monthNumber)
-      console.log(monthDay);
-      console.log(year);
+      // console.log(monthNumber)
+      // console.log(monthDay);
+      // console.log(year);
+      const revisedDate = `${monthNumber}/${monthDay}/${year}`
+      return revisedDate
+      console.log(revisedDate)
     }
 }
 formattedDate(dates);
@@ -65,14 +74,15 @@ async function fetchImages() {
   .then(res => {
     for (let i = 0; i < res.length; i++) {
     }
-    for (let j = 0; j < nasaImg.length; j++) {
-        nasaImg[j].src = res[j].hdurl;
-        if (nasaImg[j].src.includes("undefined") === true) {
+    for (let j = 0; j < reversedNasaImg.length; j++) {
+        reversedNasaImg[j].src = res[j].hdurl;
+        console.log(reversedNasaImg[j].src)
+        if (reversedNasaImg[j].src.includes("undefined") === true) {
           console.log("this is an iframe");
           const iframe = document.createElement("iframe");
           iframe.src = res[j].url;
-          cardMediaSection[j].prepend(iframe)
-          cardMediaSection[j].children[1].style.display = "none";
+          reversedCardMediaSection[j].prepend(iframe)
+          reversedCardMediaSection[j].children[1].style.display = "none";
         }
     }
     for (let k = 0; k < reversedCardTitle.length; k++) {
