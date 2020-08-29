@@ -9,7 +9,6 @@ let end_date = moment().subtract(5, "days").format("YYYY-MM-DD");
 
 const dates = [start_date, start_date1, start_date2, start_date3, start_date4, end_date];
 const reversedDates = dates.reverse();
-console.log(reversedDates)
 
 const nasaImg = Array.from(document.getElementsByClassName("nasa-img"));
 const cardTitle = document.querySelectorAll(".card-title");
@@ -31,6 +30,21 @@ const reversedCardTitle = cardTitleToArray.reverse();
 
 const dateToArray = Array.from(date);
 const reversedDate = dateToArray.reverse();
+function formattedDate(dateToFormat) {
+  const months = ["January", "February", "March", "April", "May", "June",
+   "July", "August", "September", "October", "November", "December"];
+
+    for (let i = 0; i < dateToFormat.length; i++) {
+
+      const monthNumber = dateToFormat[i].slice(5, 7);
+      const monthDay = dateToFormat[i].slice(8, 10);
+      const year = dateToFormat[i].slice(0, 4);
+      console.log(monthNumber)
+      console.log(monthDay);
+      console.log(year);
+    }
+}
+formattedDate(dates);
 
 const cardTextToArray = Array.from(cardText);
 const reversedCardText = cardTextToArray.reverse();
@@ -38,12 +52,12 @@ const reversedCardText = cardTextToArray.reverse();
 const learnMoreBtnToArray = Array.from(learnMoreBtn);
 const reversedLearnMoreBtnToArray = learnMoreBtnToArray.reverse();
 
-console.log(start_date);
-console.log(start_date1);
-console.log(start_date2);
-console.log(start_date3);
-console.log(start_date4);
-console.log(end_date);
+// console.log(start_date);
+// console.log(start_date1);
+// console.log(start_date2);
+// console.log(start_date3);
+// console.log(start_date4);
+// console.log(end_date);
 
 async function fetchImages() {
   await fetch(`https://api.nasa.gov/planetary/apod?api_key=01wmByPh4KD8GxAag5vMZBZht2xh2Hu89iOY5eaF&start_date=${end_date}&end_date=${start_date}`)
