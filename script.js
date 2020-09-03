@@ -37,36 +37,11 @@ console.log(reversedNasaImg);
 const cardMediaSectionToArray = Array.from(cardMediaSection);
 const reversedCardMediaSection = cardMediaSectionToArray.reverse();
 
-function formattedDate(dateToFormat) {
-  const months = ["January", "February", "March", "April", "May", "June",
-   "July", "August", "September", "October", "November", "December"];
-
-    for (let i = 0; i < dateToFormat.length; i++) {
-      const monthNumber = dateToFormat[i].slice(5, 7);
-      const monthDay = dateToFormat[i].slice(8, 10);
-      const year = dateToFormat[i].slice(0, 4);
-      // console.log(monthNumber)
-      // console.log(monthDay);
-      // console.log(year);
-      const revisedDate = `${monthNumber}/${monthDay}/${year}`
-      return revisedDate
-      console.log(revisedDate)
-    }
-}
-formattedDate(dates);
-
 const cardTextToArray = Array.from(cardText);
 const reversedCardText = cardTextToArray.reverse();
 
 const learnMoreBtnToArray = Array.from(learnMoreBtn);
 const reversedLearnMoreBtnToArray = learnMoreBtnToArray.reverse();
-
-// console.log(start_date);
-// console.log(start_date1);
-// console.log(start_date2);
-// console.log(start_date3);
-// console.log(start_date4);
-// console.log(end_date);
 
 async function fetchImages() {
   await fetch(`https://api.nasa.gov/planetary/apod?api_key=01wmByPh4KD8GxAag5vMZBZht2xh2Hu89iOY5eaF&start_date=${end_date}&end_date=${start_date}`)
@@ -99,7 +74,14 @@ async function fetchImages() {
     }
     for (let i = 0; i < reversedDates.length; i++) {
       for (let j = 0; j < reversedDate.length; j++) {
-        reversedDate[i].textContent = reversedDates[i]
+
+        const year = reversedDates[i].slice(0,4);
+        const month = reversedDates[i].slice(5,7);
+        const day = reversedDates[i].slice(8,10);
+
+        const finalDate = `${month}/${day}/${year}`
+
+        reversedDate[i].textContent = finalDate
       }
     }
   });
